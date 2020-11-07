@@ -27,6 +27,9 @@ def call(Map config=[:]) {
 
         def changeLogSets = currentBuild.changeSets;
 
+        echo "${config.changes}"
+        echo "${changeLogSets.size()}" 
+
         if (config.changes != "false") {
             echo "changes"
             for (change in changeLogSets) {
